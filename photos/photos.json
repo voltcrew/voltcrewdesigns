@@ -1,0 +1,101 @@
+{
+  "crewneck": {
+    "price": 70.5,
+    "colors": {
+      "black": [
+        "crewneck_black_1.png",
+        "crewneck_black_2.png",
+        "crewneck_black_3.png",
+        "crewneck_black_4.png"
+      ],
+      "darkchocolate": [
+        "crewneck_darkchocolate_1.jpg"
+      ],
+      "darkheather": [
+        "crewneck_darkheather_1.jpg"
+      ],
+      "graphiteheather": [
+        "crewneck_graphiteheather_1.jpg"
+      ],
+      "heathersportdarknavy": [
+        "crewneck_heathersportdarknavy_1.jpg"
+      ],
+      "navy": [
+        "crewneck_navy_1.jpg"
+      ]
+    }
+  },
+  "hoodie": {
+    "price": 75.5,
+    "colors": {
+      "black": [
+        "hoodie_black_1.png",
+        "hoodie_black_2.png",
+        "hoodie_black_3.png",
+        "hoodie_black_4.png"
+      ],
+      "charcoal": [
+        "hoodie_charcoal_1.jpg"
+      ],
+      "darkchocolate": [
+        "hoodie_darkchocolate_1.jpg"
+      ],
+      "darkheather": [
+        "hoodie_darkheather_1.jpg"
+      ],
+      "militarygreen": [
+        "hoodie_militarygreen_1.jpg"
+      ],
+      "navy": [
+        "hoodie_navy_1.jpg"
+      ]
+    }
+  },
+  "longsleeve": {
+    "price": 65.5,
+    "colors": {
+      "black": [
+        "longsleeve_black_1.png",
+        "longsleeve_black_2.png",
+        "longsleeve_black_3.png"
+      ],
+      "darkchocolate": [
+        "longsleeve_darkchocolate_1.jpg"
+      ],
+      "darkheather": [
+        "longsleeve_darkheather_1.jpg"
+      ],
+      "forestgreen": [
+        "longsleeve_forestgreen_1.jpg"
+      ],
+      "maroon": [
+        "longsleeve_maroon_1.jpg"
+      ],
+      "navy": [
+        "longsleeve_navy_1.jpg"
+      ],
+      "royal": [
+        "longsleeve_royal_1.jpg"
+      ]
+    }
+  },
+  "tee": {
+    "price": 55.5,
+    "colors": {
+      "black": [
+        "tee_black_1.png",
+        "tee_black_2.png",
+        "tee_black_3.png"
+      ],
+      "darkgrey": [
+        "tee_darkgrey_1.jpg"
+      ],
+      "forest": [
+        "tee_forest_1.jpg"
+      ],
+      "navy": [
+        "tee_navy_1.jpg"
+      ]
+    }
+  }
+}
