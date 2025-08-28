@@ -4,45 +4,69 @@ const path = require("path");
 const productsDir = path.join(__dirname, "photos");
 const outputFile = path.join(productsDir, "photos.json");
 
-const products = fs.readdirSync(productsDir).filter(f => fs.statSync(path.join(productsDir, f)).isDirectory());
+// Define default price mapping for product types
+const priceMap = {
+  tee: 55.5,
+  hoodies: 75.5,
+  longsleeve: 65.5,
+  crewneck: 70.5
+};
 
 const photosJson = {};
 
-products.forEach(product => {
-  const productPath = path.join(productsDir, product);
-  const files = fs.readdirSync(productPath).filter(f => /\.(png|jpg|jpeg)$/i.test(f));
+// Get top-level categories (e.g., tee, hoodies)
+const categories = fs.readdirSync(productsDir).filter(f =>
+  fs.statSync(path.join(productsDir, f)).isDirectory()
+);
 
-  const colors = {};
+categories.forEach(category => {
+  const categoryPath = path.join(productsDir, category);
+  
+  // Get subfolders (e.g., speedlimit, wheelies)
+  const subfolders = fs.readdirSync(categoryPath).filter(f =>
+    fs.statSync(path.join(categoryPath, f)).isDirectory()
+  );
 
-  files.forEach(file => {
-    // filename format: product_color_x.ext
-    // e.g., tee_dark_grey_1.png
-    const nameParts = file.split("_");
-    if (nameParts.length < 3) return; // skip unexpected names
+  subfolders.forEach(sub => {
+    const productPath = path.join(categoryPath, sub);
+    
+    // Only get image files
+    const files = fs.readdirSync(productPath).filter(f =>
+      /\.(png|jpg|jpeg)$/i.test(f)
+    );
 
-    // color is everything after the product name and before the last part
-    const colorParts = nameParts.slice(1, -1);
-    const colorName = colorParts.join(" ").toLowerCase();
+    const colors = {};
 
-    if (!colors[colorName]) colors[colorName] = [];
-    colors[colorName].push(file);
+    files.forEach(file => {
+      // filename format: product_color_x.ext
+      // e.g., hoodie_black_1.jpg
+      const nameParts = file.split("_");
+      if (nameParts.length < 3) return;
+
+      // color is everything after product and before last part
+      const colorParts = nameParts.slice(1, -1);
+      const colorName = colorParts.join(" ").toLowerCase();
+
+      if (!colors[colorName]) colors[colorName] = [];
+      // Only save filename, not full path
+      colors[colorName].push(file);
+    });
+
+    // price lookup based on top-level category
+    const price = priceMap[category.toLowerCase()] || 50;
+
+    // build product key: e.g. hoodie-speedlimit
+    const productKey = `${category}-${sub}`.toLowerCase();
+
+    photosJson[productKey] = {
+      type: category,
+      name: sub,
+      price: price,
+      colors: colors
+    };
   });
-
-  // default price mapping (change as needed)
-  let price = 0;
-  switch (product) {
-    case "tee": price = 55.5; break;
-    case "hoodie": price = 75.5; break;
-    case "longsleeve": price = 65.5; break;
-    case "crewneck": price = 70.5; break;
-    default: price = 50; break;
-  }
-
-  photosJson[product] = {
-    price: price,
-    colors: colors
-  };
 });
 
+// Write JSON file
 fs.writeFileSync(outputFile, JSON.stringify(photosJson, null, 2));
 console.log("photos.json generated successfully!");

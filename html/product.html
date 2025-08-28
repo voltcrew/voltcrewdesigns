@@ -1,40 +1,56 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Product - Voltcrew</title>
-  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/style.css" />
 </head>
 <body>
   <header>
-    <div class="logo">
-      <a href="index.html">
-        <img src="../photos/voltcrewlogo.png" alt="Voltcrew Logo" id="logo-img">
-      </a>
-    </div>
+    <a href="index.html" class="logo">
+      <img src="../photos/voltcrewlogo.png" alt="Voltcrew Logo" class="logo-img">
+    </a>
     <nav>
       <a href="index.html">Home</a>
       <a href="checkout.html">Cart</a>
     </nav>
   </header>
 
-  <main>
+  <main class="container">
     <a href="index.html" class="back-link">← Back</a>
-    <h1 id="product-name"></h1>
-    <h2 id="product-price"></h2>
 
-    <div id="product-images" class="image-gallery"></div>
+    <!-- This block is populated/used by main.js -->
+    <section id="product-detail" class="product-page">
+      <div class="product-left">
+        <div id="product-images" class="image-gallery">
+          <!-- JS will inject the gallery images here -->
+        </div>
+      </div>
 
-    <section class="options">
-      <h3>Colors</h3>
-      <div id="color-options" class="color-swatches"></div>
+      <aside class="product-right">
+        <h1 id="product-name">Product name</h1>
+        <h2 id="product-price">$0.00</h2>
 
-      <h3>Sizes</h3>
-      <div id="size-options" class="size-buttons"></div>
+        <div class="option-row">
+          <h3>Colors</h3>
+          <div id="color-options" class="color-swatches" aria-label="Color options">
+            <!-- JS will render color circles here -->
+          </div>
+        </div>
+
+        <div class="option-row">
+          <h3>Sizes</h3>
+          <div id="size-options" class="size-buttons" aria-label="Size options">
+            <!-- JS will render size buttons here -->
+          </div>
+        </div>
+
+        <div class="buy-row">
+          <button id="add-to-cart" class="btn">Add to Cart</button>
+        </div>
+      </aside>
     </section>
-
-    <button id="add-to-cart">Add to Cart</button>
   </main>
 
   <footer>
