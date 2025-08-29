@@ -2,7 +2,7 @@
   "crewneck-citizen": {
     "type": "crewneck",
     "name": "citizen",
-    "price": 70.5,
+    "price": 45.50,
     "colors": {
       "black": [
         "crewneck_black_1.png",
@@ -30,7 +30,7 @@
   "hoodie-speedlimit": {
     "type": "hoodie",
     "name": "speedlimit",
-    "price": 50,
+    "price": 49.50,
     "colors": {
       "black": [
         "hoodie_black_1.png",
@@ -58,7 +58,7 @@
   "hoodie-wheelies": {
     "type": "hoodie",
     "name": "wheelies",
-    "price": 75.50,
+    "price": 49.50,
     "colors": {
       "black": [
         "hoodie_black_1.png",
@@ -78,7 +78,7 @@
   "longsleeve-willrun": {
     "type": "longsleeve",
     "name": "willrun",
-    "price": 65.5,
+    "price": 35.50,
     "colors": {
       "black": [
         "longsleeve_black_1.png",
@@ -108,7 +108,7 @@
   "tee-goes20": {
     "type": "tee",
     "name": "goes20",
-    "price": 55.5,
+    "price": 30.50,
     "colors": {
       "black": [
         "tee_black_1.png",

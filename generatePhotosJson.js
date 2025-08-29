@@ -6,10 +6,10 @@ const outputFile = path.join(productsDir, "photos.json");
 
 // Define default price mapping for product types
 const priceMap = {
-  tee: 55.5,
-  hoodies: 75.5,
-  longsleeve: 65.5,
-  crewneck: 70.5
+  tee: 30.50,
+  hoodies: 49.50,
+  longsleeve: 35.50,
+  crewneck: 45.50
 };
 
 const photosJson = {};
